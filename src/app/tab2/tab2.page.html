@@ -11,34 +11,42 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-searchbar></ion-searchbar>
+  <ion-searchbar
+    debounce="500"
+    (ionChange)="_ionChange($event)"
+  ></ion-searchbar>
+  <ion-list>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>21.10.2021</ion-card-subtitle>
+        <ion-card-title>Breast</ion-card-title>
+      </ion-card-header>
 
-  <ion-card ion-background-color="dark">
-    <ion-card-header>
-      <ion-card-subtitle>21.10.2021</ion-card-subtitle>
-      <ion-card-title>Breast</ion-card-title>
-    </ion-card-header>
+      <ion-card-content>
+        <p>Workout: BenchPress</p>
+        <p>Weight: 60 kg</p>
+        <p>Repetition: 10</p>
+        <p>Number of series: 5</p>
+      </ion-card-content>
+    </ion-card>
 
-    <ion-card-content>Workout: BenchPress</ion-card-content>
-    <ion-card-content>Weight: 60 kg</ion-card-content>
-    <ion-card-content>Repetition: 10</ion-card-content>
-    <ion-card-content>Number of series: 5</ion-card-content>
-  </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>21.10.2021</ion-card-subtitle>
+        <ion-card-title>Hands</ion-card-title>
+      </ion-card-header>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle>21.10.2021</ion-card-subtitle>
-      <ion-card-title>Hands</ion-card-title>
-    </ion-card-header>
-
-    <ion-card-content>Workout: Push up</ion-card-content>
-    <ion-card-content>Weight: 10 kg</ion-card-content>
-    <ion-card-content>Repetition: 15</ion-card-content>
-    <ion-card-content>Number of series: 5</ion-card-content>
-  </ion-card>
+      <ion-card-content>
+        <p>Workout: BenchPress</p>
+        <p>Weight: 60 kg</p>
+        <p>Repetition: 10</p>
+        <p>Number of series: 5</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button>
+    <ion-fab-button color="success">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

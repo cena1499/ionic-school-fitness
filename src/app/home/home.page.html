@@ -1,0 +1,92 @@
+<ion-content>
+  <!--Menu definition-->
+  <ion-menu side="start" menuId="first" contentId="main">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>Home</ion-item>
+        <ion-item>My Workouts</ion-item>
+        <ion-item>Targets</ion-item>
+        <ion-item>Inspiratioo</ion-item>
+        <ion-item>Menu Item</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <!--Header-->
+  <ion-header>
+    <div class="heading">
+      <ion-router-outlet id="main"></ion-router-outlet>
+      <ion-buttons slot="start">
+        <ion-menu-button
+          mode="ios"
+          defaulthref="/home"
+          color="dark"
+        ></ion-menu-button>
+        <ion-label> Fitness <span>App</span></ion-label>
+      </ion-buttons>
+      <ion-searchbar></ion-searchbar>
+      <div class="hrefs">
+        <div class="href">Add workout</div>
+        <div class="href">Add target</div>
+      </div>
+    </div>
+  </ion-header>
+
+  <ion-title>My training</ion-title>
+  <div class="trainings">
+    <ion-card>
+      <ion-card-content>
+        <ion-card-title>Back</ion-card-title>
+        <ion-card-subtitle>22.5.2021</ion-card-subtitle>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <ion-card-title>Hands</ion-card-title>
+        <ion-card-subtitle>20.5.2021</ion-card-subtitle>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <ion-card-title>Legs</ion-card-title>
+        <ion-card-subtitle>18.5.2021</ion-card-subtitle>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div class="last-training">
+    <ion-title>Last training</ion-title>
+    <div class="text-area">
+      <div class="text">22.5.2021 - Back</div>
+    </div>
+
+    <div class="detail">
+      <div class="workout">Deadlifth</div>
+      <div class="workout">Push up</div>
+      <div class="workout">next</div>
+      <div class="workout">test</div>
+      <div class="workout">Deadman</div>
+    </div>
+  </div>
+
+  <div class="targets">
+    <ion-title>Targets</ion-title>
+    <div class="target-area">
+      <ion-card>
+        <ion-card-subtitle>18.5.2022</ion-card-subtitle>
+        <ion-card-title>Deadlifth</ion-card-title>
+        <ion-card-content>180 kg</ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-subtitle>31.1..2022</ion-card-subtitle>
+        <ion-card-title>Benchpress</ion-card-title>
+        <ion-card-content>100 kg</ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
