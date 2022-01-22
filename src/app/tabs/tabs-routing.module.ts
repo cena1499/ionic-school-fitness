@@ -10,22 +10,31 @@ const routes: Routes = [
       {
         path: 'tab1',
         loadChildren: () =>
-          import('../tab1/tab1.module').then((m) => m.Tab1PageModule),
+          import('../pages/home/home.module').then((m) => m.HomePageModule),
       },
       {
-        path: 'tab2',
+        path: 'meals',
         loadChildren: () =>
-          import('../tab2/tab2.module').then((m) => m.Tab2PageModule),
+          import('../pages/meals/meals.module').then((m) => m.MealsPageModule),
       },
       {
-        path: 'tab3',
+        path: 'addPage',
         loadChildren: () =>
-          import('../tab3/tab3.module').then((m) => m.Tab3PageModule),
+          import('../pages/add-page/add-page.module').then(
+            (m) => m.AddPagePageModule
+          ),
+      },
+      {
+        path: 'workouts',
+        loadChildren: () =>
+          import('../pages/workouts/workouts.module').then(
+            (m) => m.WorkoutsPageModule
+          ),
       },
       {
         path: 'home',
         loadChildren: () =>
-          import('../home/home.module').then((m) => m.HomePageModule),
+          import('../pages/home/home.module').then((m) => m.HomePageModule),
       },
       {
         path: '',

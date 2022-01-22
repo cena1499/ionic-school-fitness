@@ -1,0 +1,42 @@
+<ion-content [fullscreen]="true">
+  <!--Header-->
+  <ion-header>
+    <div class="heading">
+      <ion-buttons slot="start">
+        <ion-label> Fitness <span>App</span></ion-label>
+      </ion-buttons>
+      <ion-title>Meals</ion-title>
+    </div>
+  </ion-header>
+
+  <ion-button
+    expand="block"
+    (click)="btnMealsClicked()"
+    class="ion-padding-horizontal"
+    size="large"
+    color="light"
+    >Show meals</ion-button
+  >
+
+  <ion-list>
+    <ion-card *ngFor="let meal of meals">
+      <ion-card-header>
+        <ion-card-title>{{ meal.title }}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p>Preparion time: {{ meal.preparationTime }} min</p>
+      </ion-card-content>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col class="ion-align-items-end ion-grid-column-padding-lg">
+            <ion-button color="success" (click)="btnMealClicked(meal.slug)"
+              >Show detail</ion-button
+            >
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </ion-list>
+</ion-content>

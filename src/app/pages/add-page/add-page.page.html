@@ -1,20 +1,23 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title> Add training </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Add training</ion-title>
-    </ion-toolbar>
+  <!--Header-->
+  <ion-header>
+    <div class="heading">
+      <ion-buttons slot="start">
+        <ion-label> Fitness <span>App</span></ion-label>
+      </ion-buttons>
+      <ion-title>Add training</ion-title>
+    </div>
   </ion-header>
 
   <ion-list>
     <ion-item>
       <ion-label>Body part</ion-label>
-      <ion-select value="body_part" okText="Ok" cancelText="Cancel">
+      <ion-select
+        [(ngModel)]="newItem.BodyPart"
+        value="body_part"
+        okText="Ok"
+        cancelText="Cancel"
+      >
         <ion-select-option value="hands">Hands</ion-select-option>
         <ion-select-option value="back">Back</ion-select-option>
         <ion-select-option value="breast">Breast</ion-select-option>
@@ -25,28 +28,30 @@
 
   <ion-item>
     <ion-label position="floating">Workout</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="newItem.Workout"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label position="floating">Weight</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="newItem.Weight"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label position="floating">Repetition</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="newItem.Repetition"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label position="floating">Number of series</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="newItem.NumberOfSeries"></ion-input>
   </ion-item>
 
   <ion-grid>
     <ion-row>
       <ion-col class="ion-align-items-end ion-grid-column-padding-lg">
-        <ion-button color="success">Success</ion-button>
+        <ion-button color="success" (click)="addItem()"
+          >Přidat trénink</ion-button
+        >
       </ion-col>
     </ion-row>
   </ion-grid>

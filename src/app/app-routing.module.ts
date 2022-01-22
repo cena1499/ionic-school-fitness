@@ -10,7 +10,30 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () =>
-      import('./home/home.module').then((m) => m.HomePageModule),
+      import('./pages/home/home.module').then((m) => m.HomePageModule),
+  },
+  {
+    path: 'workouts',
+    loadChildren: () =>
+      import('./pages/workouts/workouts.module').then(
+        (m) => m.WorkoutsPageModule
+      ),
+  },
+  {
+    path: 'add-page',
+    loadChildren: () =>
+      import('./pages/add-page/add-page.module').then(
+        (m) => m.AddPagePageModule
+      ),
+  },
+  {
+    path: 'meals',
+    loadChildren: () =>
+      import('./pages/meals/meals.module').then((m) => m.MealsPageModule),
+  },
+  {
+    path: 'meal-detail',
+    loadChildren: () => import('./pages/meal-detail/meal-detail.module').then( m => m.MealDetailPageModule)
   },
 ];
 @NgModule({

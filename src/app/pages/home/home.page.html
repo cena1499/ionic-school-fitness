@@ -1,0 +1,45 @@
+<ion-content>
+  <!--Header-->
+  <ion-header>
+    <div class="heading">
+      <ion-buttons slot="start">
+        <ion-label> Fitness <span>App</span></ion-label>
+      </ion-buttons>
+      <ion-title>Author: Zdeněk Karlík</ion-title>
+      <div class="hrefs">
+        <ion-button color="light" (click)="goToAddPage()"
+          >Add workout</ion-button
+        >
+      </div>
+    </div>
+  </ion-header>
+
+  <ion-title>My trainings</ion-title>
+
+  <ion-list *ngFor="let item of items">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>{{ item.DateTime }}</ion-card-subtitle>
+        <ion-card-title>{{ item.BodyPart }}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p>Workout: {{ item.Workout }}</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+  <div class="last-training">
+    <ion-title>Last training</ion-title>
+    <div class="text-area">
+      <div class="text">{{ item.BodyPart }}</div>
+    </div>
+
+    <div class="detail">
+      <div class="workout">Workout: {{ item.Workout }}</div>
+      <div class="workout">Weight: {{ item.Weight }} kg</div>
+      <div class="workout">Repetition: {{ item.Repetition }}</div>
+      <div class="workout">Number of series: {{ item.NumberOfSeries }}</div>
+    </div>
+  </div>
+</ion-content>
