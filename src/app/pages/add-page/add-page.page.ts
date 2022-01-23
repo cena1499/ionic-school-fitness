@@ -4,6 +4,7 @@ import {
   LocalStorageService,
   Workout,
 } from 'src/app/services/local-storage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-page',
@@ -16,7 +17,8 @@ export class AddPagePage implements OnInit {
 
   constructor(
     private storageService: LocalStorageService,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private route: Router
   ) {}
 
   addItem() {
@@ -25,8 +27,9 @@ export class AddPagePage implements OnInit {
       this.storageService.addItem(this.newItem).then((item) => {
         this.newItem = <Workout>{};
         this.showToast('Workout was added');
-        this.loadItems();
+        window.location.reload();
       });
+      this.route.navigate(['/tabs/workouts']);
     }
   }
 
