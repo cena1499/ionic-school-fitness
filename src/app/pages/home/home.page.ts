@@ -24,9 +24,13 @@ export class HomePage implements OnInit {
 
   loadItems() {
     this.storageService.getItems().then((items) => {
-      this.items = items.reverse();
+      this.items = items.reverse().slice(0, 3);
       this.item = items[0];
     });
+  }
+
+  goToAddPageButton() {
+    this.route.navigate(['/tabs/addPage']);
   }
 
   ngOnInit() {}

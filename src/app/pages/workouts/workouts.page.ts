@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Platform, ToastController } from '@ionic/angular';
-import { MenuController } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import {
   LocalStorageService,
@@ -18,10 +17,8 @@ export class WorkoutsPage implements OnInit {
 
   constructor(
     private storageService: LocalStorageService,
-    private plt: Platform,
     private toastController: ToastController,
-    private route: Router,
-    private menu: MenuController
+    private route: Router
   ) {
     this.loadItems();
   }
@@ -34,7 +31,7 @@ export class WorkoutsPage implements OnInit {
 
   deleteItem(item: Workout) {
     this.storageService.deleteItem(item.id).then((item) => {
-      this.showToast('Trénink byl odstraněn');
+      this.showToast('Workout was deleted');
       this.loadItems();
     });
   }
@@ -49,35 +46,6 @@ export class WorkoutsPage implements OnInit {
 
   goToAddPageButton() {
     this.route.navigate(['/tabs/addPage']);
-  }
-
-  openFirst() {
-    this.menu.enable(true, 'first');
-    this.menu.open('first');
-  }
-
-  openEnd() {
-    this.menu.open('end');
-    this.route.navigate(['/tabs/home']);
-  }
-
-  openCustom() {
-    this.menu.enable(true, 'custom');
-    this.menu.open('custom');
-  }
-
-  goToAddPage() {
-    this.openCustom();
-    this.route.navigate(['/tabs/addPage']);
-  }
-
-  goToHome() {
-    this.openCustom();
-  }
-
-  goToWorkouts() {
-    this.openCustom();
-    this.route.navigate(['/tabs/workouts']);
   }
 
   ngOnInit() {}

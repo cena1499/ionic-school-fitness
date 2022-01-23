@@ -21,10 +21,11 @@ export class AddPagePage implements OnInit {
 
   addItem() {
     if (this.requiredForm()) {
+      this.newItem.id = Date.now();
       this.storageService.addItem(this.newItem).then((item) => {
         this.newItem = <Workout>{};
         this.showToast('Workout was added');
-        window.location.reload();
+        this.loadItems();
       });
     }
   }
@@ -35,6 +36,12 @@ export class AddPagePage implements OnInit {
       duration: 2000,
     });
     toast.present();
+  }
+
+  loadItems() {
+    this.storageService.getItems().then((items) => {
+      this.items = items;
+    });
   }
 
   requiredForm(): boolean {

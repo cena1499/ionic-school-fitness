@@ -26,6 +26,7 @@ ion-content {
     width: 100%;
     height: 200px;
     border-radius: 0 0 55px 55px;
+    margin-bottom: 10px;
 
     ion-buttons {
       padding-top: 10px;
@@ -71,23 +72,6 @@ ion-content {
     font-size: 20px;
     text-align: center;
     padding: 10px 0 10px 0;
-  }
-
-  .trainings {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    ion-card {
-      border: 4px solid #49b51f;
-      border-radius: 50px;
-      width: 100px;
-      text-align: center;
-
-      ion-card-content {
-        padding: 24px 0 24px 0;
-      }
-    }
   }
 
   .last-training {
